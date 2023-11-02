@@ -1,0 +1,42 @@
+.dropdown-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  label {
+    margin: 5px;
+    font-size: 20px;
+  }
+
+  select {
+    font-size: 20px;
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-image: url("../../Media/Image/Dropdown-Arrow.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-color: #f2f2f2;
+    border: #5aa2ae solid 1px;
+    height: 30px;
+    width: 150px;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 0;
+    }
+
+    option {
+      height: 30px;
+    }
+  }
+}
+
+.clear-options {
+  color: #a19c9c;
+}

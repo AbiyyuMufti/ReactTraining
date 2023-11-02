@@ -1,0 +1,155 @@
+$main-color: #064d7a;
+
+body {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+
+  &__header {
+    height: 60px;
+    border-bottom: solid 2px $main-color;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 5px;
+
+    img {
+      margin: 5px;
+      height: inherit;
+      width: auto;
+      object-fit: contain;
+    }
+    img.home-logo {
+      height: 30px;
+    }
+
+    div {
+      height: inherit;
+      display: flex;
+      align-items: center;
+    }
+
+    div.user-name {
+      display: flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+      text-align: right;
+      margin-right: 20px;
+      font-weight: bold;
+      font-style: italic;
+      align-items: center;
+
+      img {
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+
+  &__body {
+    height: inherit;
+    width: 100%;
+    flex-grow: 2;
+  }
+}
+
+.modal-background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 2;
+}
+
+.backdrop {
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: $main-color;
+}
+
+.heading {
+  background-color: $main-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+
+  h1 {
+    width: 100%;
+    color: white;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 28px;
+  }
+}
+
+.delete-confirmation-box {
+  height: 200px;
+  width: 500px;
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    h1 {
+      text-align: center;
+      color: white;
+    }
+    .button-style {
+      border: 2px solid #b5b5b5;
+    }
+  }
+}
+
+.button-style {
+  margin: 5px;
+  font-size: 16px;
+  color: white;
+  min-width: 100px;
+  height: 28px;
+  background-color: $main-color;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  border: none;
+  &:hover {
+    background-color: #468cb8;
+  }
+}
+
+input[type="date"].date-picker {
+  height: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: $main-color;
+  color: white;
+  z-index: 0;
+  text-align: center;
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+  &::-webkit-inner-spin-button {
+    opacity: 0;
+  }
+}

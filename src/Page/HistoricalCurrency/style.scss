@@ -1,0 +1,170 @@
+$main-color: #064d7a;
+
+.hc-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+
+  &__container {
+    padding: 20px;
+    align-self: center;
+    width: 700px;
+    height: calc(8 * 40px + 50px);
+    border: 2px solid $main-color;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.operation {
+  font-size: 16px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+@mixin row-setting {
+  height: 40px;
+  width: 100%;
+}
+
+@mixin cell-setting {
+  font-size: 20px;
+  padding: 10px;
+
+  &:first-child {
+    width: 40px;
+    text-align: right;
+  }
+}
+
+.table-container {
+  height: calc(8 * 40px);
+}
+
+.grid-style {
+  height: calc(8 * 40px);
+  overflow-y: hidden;
+
+  &:hover {
+    overflow-y: auto;
+  }
+
+  table.responsive-grid {
+    width: 100%;
+    height: 100%;
+
+    tr {
+      @include row-setting;
+
+      &:hover td {
+        background-color: #909090;
+      }
+
+      &:focus td {
+        background-color: #4f005f;
+      }
+
+      &.selected td {
+        background-color: #505050;
+        color: white;
+      }
+    }
+
+    th {
+      @include cell-setting;
+      background-color: $main-color;
+      color: white;
+      font-weight: lighter;
+      font-size: 24px;
+    }
+
+    thead {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    td {
+      @include cell-setting;
+      background-color: #b5b5b4;
+    }
+
+    tbody {
+      max-height: calc(6 * 40px);
+    }
+  }
+}
+
+@mixin when-focus {
+  &:focus {
+    outline: none;
+    border-color: #4f005f;
+    background: #f6dbfc;
+  }
+}
+
+.text-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  label {
+    margin: 5px;
+  }
+
+  input {
+    margin: 5px;
+    height: 20px;
+    width: 100px;
+    font-size: 16px;
+    text-align: end;
+    @include when-focus;
+  }
+
+  &.invalid input {
+    border-color: red;
+    background: #fbdada;
+
+    @include when-focus;
+  }
+}
+
+.currency-chart {
+  z-index: 100;
+  display: flex;
+  background-color: $main-color;
+
+  height: 500px;
+  width: 800px;
+  flex-direction: column;
+
+  & .header {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    border: #909090 2px solid;
+    color: white;
+  }
+  & .chart {
+    margin: 30px 18px;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+
+    & .hourly-chart {
+      background-color: white;
+    }
+    & .daily-chart {
+      background-color: white;
+    }
+  }
+}

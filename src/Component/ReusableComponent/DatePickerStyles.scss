@@ -1,0 +1,161 @@
+.container {
+  position: relative;
+}
+
+.floating-div {
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.button-style.date-picker-button {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.date-picker-container {
+  display: flex;
+  flex-direction: column;
+
+  width: 250px;
+  min-height: 100px;
+  padding: 5px;
+
+  background-color: white;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+
+  .parent-selector {
+    position: relative;
+    width: 100%;
+  }
+
+  .calendar-section {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 30px;
+      min-height: 30px;
+    }
+
+    .calender-header {
+      background-color: #064d7a;
+      font-weight: bold;
+      color: white;
+    }
+
+    .calender-date {
+      &:hover {
+        cursor: pointer;
+        background-color: #eeeeee;
+      }
+
+      &.selected {
+        color: white;
+        font-weight: bold;
+        background-color: #999999;
+        border-radius: 20%;
+      }
+    }
+  }
+
+  .header-selector {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .button-style.date-button-ctr {
+      min-width: unset;
+      width: fit-content;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      border: 1px solid;
+      background-color: white;
+
+      img {
+        height: 80%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .button-style:nth-child(2) {
+      width: 200px;
+    }
+  }
+
+  .year-month-selection {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5px;
+    z-index: 2;
+    background-color: white;
+    padding: 10px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    height: 200px;
+    width: 95%;
+
+    .selector-flex-item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .year-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 5px;
+      background-color: #eeeeee;
+      border: 1px solid;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #999999;
+      }
+
+      &.selected {
+        background-color: aliceblue;
+        font-weight: bold;
+      }
+    }
+
+    .month-selector {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      // flex-wrap: wrap;
+      gap: 5px;
+      .month-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #44b7ff;
+        color: white;
+
+        &:hover {
+          background-color: #4f9bca;
+          cursor: pointer;
+        }
+
+        &.selected {
+          font-weight: bold;
+          background-color: #064d7a;
+        }
+      }
+    }
+  }
+}

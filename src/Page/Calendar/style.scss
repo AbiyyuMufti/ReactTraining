@@ -1,0 +1,175 @@
+$main-color: #064d7a;
+
+.calendar-main {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 50px 50px 50px;
+
+  &__selector {
+    margin: 5px 0px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+.date-header {
+  min-width: 200px;
+  height: 50px;
+  background-color: $main-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.date-item {
+  border: #064d7a 2px solid;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px;
+
+  & .date-holder {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .button-style {
+      min-width: unset;
+      cursor: pointer;
+      background-color: white;
+      height: 40px;
+      width: 40px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & img {
+        height: inherit;
+        width: inherit;
+        object-fit: contain;
+      }
+    }
+
+    & h1.is-weekend {
+      color: red;
+    }
+  }
+
+  & .agenda-holder {
+    margin-top: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: hidden;
+
+    &:hover {
+      overflow-y: auto;
+    }
+
+    & .agenda-item {
+      border: none;
+      border-radius: 5px;
+      min-height: 28px;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      cursor: pointer;
+      color: white;
+      font-size: 20px;
+    }
+  }
+}
+
+.notes {
+  height: 400px;
+  width: 700px;
+  background-color: $main-color;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 5px;
+
+  &__header {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .dates-section {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      & div {
+        margin: 5px;
+      }
+      & .date-display {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        border: 1px white solid;
+        background-color: #053f63;
+        width: 300px;
+        height: 35px;
+      }
+    }
+  }
+
+  & #agenda {
+    height: 40px;
+    font-size: 18px;
+    border: 2px solid #5aa2ae;
+  }
+
+  & #description {
+    height: 200px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid #5aa2ae;
+  }
+
+  & .dropdown-area {
+    height: 80px;
+    display: flex;
+
+    & .dropdown-selector {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  & .button-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    .button-style {
+      border: 2px solid #b5b5b5;
+    }
+  }
+  .form-label {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px;
+  }
+}
+
+.delete-confirmation-box.notes-delete {
+  border: 10px #b5b5b4 solid;
+  border-radius: 5px;
+}

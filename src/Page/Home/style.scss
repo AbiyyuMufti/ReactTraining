@@ -1,0 +1,33 @@
+menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+  min-height: 80vh;
+  gap: 0px 20px;
+
+  a:any-link {
+    text-decoration: none;
+  }
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 3px #034c79;
+    border-radius: 30px;
+    min-height: 180px;
+    max-height: 200px;
+    min-width: 350px;
+
+    &:hover {
+      background-color: #d9d9d9;
+    }
+
+    h1 {
+      text-align: center;
+      color: #034c79;
+    }
+  }
+}
